@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lime Sklad — Anbar İdarəetmə Sistemi</title>
+    <title>Lime Store — Anbar İdarəetmə Sistemi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,7 +83,7 @@
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center font-bold text-xl text-white">
                         L
                     </div>
-                    <span class="text-xl font-bold tracking-tight text-slate-900">Lime Sklad</span>
+                    <span class="text-xl font-bold tracking-tight text-slate-900">Lime Store</span>
                 </div>
                 <div class="hidden md:flex items-center gap-8">
                     <a href="#features" class="text-sm text-slate-500 hover:text-primary-500 transition font-medium">Funksiyalar</a>
@@ -134,7 +134,7 @@
                 </h1>
 
                 <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up" style="animation-delay: 0.3s">
-                    Lime Sklad — pərakəndə və topdan satış üçün müasir anbar idarəetmə sistemi. 
+                    Lime Store — pərakəndə və topdan satış üçün müasir anbar idarəetmə sistemi. 
                     Məhsulları izləyin, satışları nəzarətdə saxlayın, gəlirlərinizi artırın.
                 </p>
 
@@ -367,56 +367,65 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Screenshot 1 -->
-                <div class="relative group rounded-2xl overflow-hidden screenshot-shadow">
-                    <div class="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 border border-slate-200 rounded-2xl flex items-center justify-center">
-                        <div class="text-center p-8">
-                            <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-primary-50 flex items-center justify-center">
-                                <svg class="w-10 h-10 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+            <!-- Screenshot tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="showScreen(0)" id="tab-0" class="screen-tab active px-5 py-2 rounded-full text-sm font-semibold border-2 border-primary-500 bg-primary-500 text-white transition">Ana Menyu</button>
+                <button onclick="showScreen(1)" id="tab-1" class="screen-tab px-5 py-2 rounded-full text-sm font-semibold border-2 border-slate-200 text-slate-600 hover:border-primary-300 transition">Hesabat</button>
+                <button onclick="showScreen(2)" id="tab-2" class="screen-tab px-5 py-2 rounded-full text-sm font-semibold border-2 border-slate-200 text-slate-600 hover:border-primary-300 transition">Analytics</button>
+                <button onclick="showScreen(3)" id="tab-3" class="screen-tab px-5 py-2 rounded-full text-sm font-semibold border-2 border-slate-200 text-slate-600 hover:border-primary-300 transition">Anbar</button>
+            </div>
+
+            <!-- Browser frame wrapper -->
+            <div class="max-w-5xl mx-auto">
+                <div class="rounded-2xl overflow-hidden screenshot-shadow border border-slate-200" style="background:#f1f5f9;">
+                    <!-- Browser chrome -->
+                    <div class="flex items-center gap-3 px-5 py-3.5 border-b border-slate-200" style="background:#f8fafc;">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        </div>
+                        <div class="flex-1 mx-4">
+                            <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-lg px-3 py-1.5 max-w-sm mx-auto">
+                                <svg class="w-3.5 h-3.5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                                <span class="text-xs text-slate-400 font-mono">limestore</span>
                             </div>
-                            <p class="text-slate-500 text-sm font-medium">Ekran görüntüsü — Anbar İdarəetmə</p>
-                            <p class="text-slate-400 text-xs mt-1">[ şəkil əlavə edin ]</p>
+                        </div>
+                    </div>
+                    <!-- Screenshots carousel -->
+                    <div class="relative overflow-hidden" style="background:#fff;">
+                        <div id="screen-0" class="screen-panel">
+                            <img src="assets/111.png" alt="Ana Menyu — Lime Store" class="w-full h-auto block">
+                        </div>
+                        <div id="screen-1" class="screen-panel hidden">
+                            <img src="assets/333.png" alt="Hesabat — Lime Store" class="w-full h-auto block">
+                        </div>
+                        <div id="screen-2" class="screen-panel hidden">
+                            <img src="assets/444.png" alt="Analytics — Lime Store" class="w-full h-auto block">
+                        </div>
+                        <div id="screen-3" class="screen-panel hidden">
+                            <img src="assets/2222.png" alt="Satış Cədvəli — Lime Store" class="w-full h-auto block">
                         </div>
                     </div>
                 </div>
 
-                <!-- Screenshot 2 -->
-                <div class="relative group rounded-2xl overflow-hidden screenshot-shadow">
-                    <div class="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 border border-slate-200 rounded-2xl flex items-center justify-center">
-                        <div class="text-center p-8">
-                            <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-emerald-50 flex items-center justify-center">
-                                <svg class="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                            </div>
-                            <p class="text-slate-500 text-sm font-medium">Ekran görüntüsü — Satış Hesabatları</p>
-                            <p class="text-slate-400 text-xs mt-1">[ şəkil əlavə edin ]</p>
-                        </div>
+                <!-- Caption -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+                    <div class="text-center p-4 rounded-xl bg-white border border-slate-100">
+                        <div class="text-2xl font-extrabold text-primary-500 mb-1">6+</div>
+                        <div class="text-xs text-slate-500 font-medium">Modul</div>
                     </div>
-                </div>
-
-                <!-- Screenshot 3 -->
-                <div class="relative group rounded-2xl overflow-hidden screenshot-shadow">
-                    <div class="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 border border-slate-200 rounded-2xl flex items-center justify-center">
-                        <div class="text-center p-8">
-                            <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-violet-50 flex items-center justify-center">
-                                <svg class="w-10 h-10 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                            </div>
-                            <p class="text-slate-500 text-sm font-medium">Ekran görüntüsü — POS Kassa</p>
-                            <p class="text-slate-400 text-xs mt-1">[ şəkil əlavə edin ]</p>
-                        </div>
+                    <div class="text-center p-4 rounded-xl bg-white border border-slate-100">
+                        <div class="text-2xl font-extrabold text-primary-500 mb-1">2</div>
+                        <div class="text-xs text-slate-500 font-medium">Mövzu (tünd/işıqlı)</div>
                     </div>
-                </div>
-
-                <!-- Screenshot 4 -->
-                <div class="relative group rounded-2xl overflow-hidden screenshot-shadow">
-                    <div class="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 border border-slate-200 rounded-2xl flex items-center justify-center">
-                        <div class="text-center p-8">
-                            <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-amber-50 flex items-center justify-center">
-                                <svg class="w-10 h-10 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
-                            </div>
-                            <p class="text-slate-500 text-sm font-medium">Ekran görüntüsü — Analitika</p>
-                            <p class="text-slate-400 text-xs mt-1">[ şəkil əlavə edin ]</p>
-                        </div>
+                    <div class="text-center p-4 rounded-xl bg-white border border-slate-100">
+                        <div class="text-2xl font-extrabold text-primary-500 mb-1">∞</div>
+                        <div class="text-xs text-slate-500 font-medium">Məhsul</div>
+                    </div>
+                    <div class="text-center p-4 rounded-xl bg-white border border-slate-100">
+                        <div class="text-2xl font-extrabold text-primary-500 mb-1">Real</div>
+                        <div class="text-xs text-slate-500 font-medium">Vaxtda analitika</div>
                     </div>
                 </div>
             </div>
@@ -443,7 +452,7 @@
                     <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-indigo-500 text-white text-xs font-bold px-6 py-1.5 rounded-full shadow-md shadow-primary-500/30">TÜM FUNKSİYALAR</div>
                     
                     <div class="text-center mb-8 pt-2">
-                        <h3 class="text-lg font-semibold text-slate-900 mb-1">Lime Sklad</h3>
+                        <h3 class="text-lg font-semibold text-slate-900 mb-1">Lime Store</h3>
                         <p class="text-slate-500 text-sm">Tam versiya</p>
                     </div>
 
@@ -589,10 +598,10 @@
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center font-bold text-xl text-white">
                         L
                     </div>
-                    <span class="text-lg font-bold text-slate-900">Lime Sklad</span>
+                    <span class="text-lg font-bold text-slate-900">Lime Store</span>
                 </div>
                 <div class="text-slate-500 text-sm">
-                    &copy; 2024 Lime Sklad. Bütün hüquqlar qorunur.
+                    &copy; 2024 Lime Store. Bütün hüquqlar qorunur.
                 </div>
                 <div class="flex items-center gap-4">
                     <a href="https://wa.me/994504213635977" target="_blank" class="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-400 hover:text-emerald-500 hover:border-emerald-200 transition">
@@ -642,7 +651,7 @@
             const plan = this.querySelector('select').value;
             const message = this.querySelector('textarea').value;
             
-            let text = `Salam! Lime Sklad haqqında məlumat istəyirəm.\n\n`;
+            let text = `Salam! Lime Store haqqında məlumat istəyirəm.\n\n`;
             text += `Ad: ${name}\n`;
             text += `Telefon: ${phone}\n`;
             if (plan) text += `Plan: ${plan}\n`;
@@ -679,6 +688,20 @@
                 }
             });
         }, observerOptions);
+
+        // Screenshot tabs
+        function showScreen(index) {
+            document.querySelectorAll('.screen-panel').forEach(p => p.classList.add('hidden'));
+            document.querySelectorAll('.screen-tab').forEach(t => {
+                t.classList.remove('bg-primary-500', 'text-white', 'border-primary-500');
+                t.classList.add('border-slate-200', 'text-slate-600');
+            });
+            document.getElementById('screen-' + index).classList.remove('hidden');
+            const tab = document.getElementById('tab-' + index);
+            tab.classList.add('bg-primary-500', 'text-white', 'border-primary-500');
+            tab.classList.remove('border-slate-200', 'text-slate-600');
+        }
+        window.showScreen = showScreen;
 
         document.querySelectorAll('.feature-card').forEach((card, index) => {
             card.style.opacity = '0';
